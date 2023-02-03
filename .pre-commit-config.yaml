@@ -18,7 +18,7 @@ repos:
     hooks:
       - id: black
         name: Lint code
-        args: ["--check", "--verbose", "--config", "./pyproject.toml", "src/honeybot/"]
+        args: ["--check", "--config", "./pyproject.toml", "src/honeybot/"]
   - repo: https://github.com/PyCQA/bandit
     rev: 1.7.4
     hooks:
