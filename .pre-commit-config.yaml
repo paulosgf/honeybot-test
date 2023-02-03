@@ -1,0 +1,37 @@
+ci:
+  autoupdate_schedule: monthly
+files: ^src/honeybot/
+repos:
+  - repo: https://github.com/asottile/pyupgrade
+    rev: v2.31.1
+    hooks:
+      - id: pyupgrade
+        args: ["--py36-plus"]
+  - repo: https://github.com/PyCQA/isort
+    rev: 5.12.0
+    hooks:
+      - id: isort
+        name: Reorder Python Imports
+        args: ["--check-only", "--settings-path", "./pyproject.toml", "src/honeybot/"]
+  - repo: https://github.com/psf/black
+    rev: 22.3.0
+    hooks:
+      - id: black
+        name: Lint code
+        args: ["--check", "--verbose", "--config", "./pyproject.toml", "src/honeybot/"]
+  - repo: https://github.com/PyCQA/bandit
+    rev: 1.7.4
+    hooks:
+      - id: bandit
+        name: Security checks
+        args: ["-ll", "-c", "./pyproject.toml", "-r", "src/honeybot/"]
+        additional_dependencies: [ "bandit[toml]" ]
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.1.0
+    hooks:
+      - id: fix-byte-order-marker
+      - id: trailing-whitespace
+      - id: end-of-file-fixer
+      - id: check-yaml
+      - id: debug-statements
+      - id: check-added-large-files
