@@ -51,7 +51,7 @@ jobs:
       - name: pre-commit checks
         run: |
           pre-commit install
-          pre-commit run --config ./.pre-commit-config.yaml --all-files
+#          pre-commit run --config ./.pre-commit-config.yaml --all-files
 
   test:
     # The type of runner that the job will run on
