@@ -46,9 +46,9 @@ jobs:
           pip install black==22.3.0 isort pre-commit bandit[toml] pyupgrade==2.31.1
           pip install .
       # Run pre-commit checks
-#     - uses: pre-commit/action@v3.0.0
-#     - uses: pre-commit-ci/lite-action@v1.0.1
-#       if: always()
+      - uses: pre-commit/action@v3.0.0
+      - uses: pre-commit-ci/lite-action@v1.0.1
+        if: always()
   
   test:
     # The type of runner that the job will run on
