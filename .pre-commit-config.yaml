@@ -12,7 +12,7 @@ repos:
     hooks:
       - id: isort
         name: Reorder Python Imports
-        args: ["--check-only", "--settings-path", "./pyproject.toml", "src/honeybot/"]
+        args: ["--settings-path", "./pyproject.toml", "src/honeybot/"]
   - repo: https://github.com/psf/black
     rev: 22.3.0
     hooks:
